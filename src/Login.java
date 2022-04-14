@@ -92,26 +92,43 @@ public class Login extends JFrame{
                 }
                 
             });
+             
+            JButton Register = new JButton("Register");
+            Register.setFont(mainFont);
 
-            JButton btnRegister = new JButton("Register Here");
-            btnRegister.setFont(mainFont);
+            Register.addActionListener(new ActionListener(){
+
+                @Override
+                public void actionPerformed(ActionEvent arg0) {
+                    
+
+                    register Registration = new register();
+
+                    Registration.RegistrationForm();
+
+                   // System.out.println("Hi there Register here");
+                    
+                }
+                
+            });
 
             JPanel buttonPanel = new JPanel();
             buttonPanel.setLayout(new GridLayout(1,2,10,0));
             buttonPanel.setBorder(BorderFactory.createEmptyBorder(30,50,30,50));
             buttonPanel.add(btnLogin);
             buttonPanel.add(btnCancel);
+            buttonPanel.add(Register);
 
-            JPanel regPanel = new JPanel();
-            regPanel.setLayout(new GridLayout(2,2,2,2));
+            
 
-            regPanel.add(btnRegister);
+            
 
 
 
 // initialize frame
         add(formpPanel, BorderLayout.NORTH);
         add(buttonPanel,BorderLayout.SOUTH);
+        
 
 
 
