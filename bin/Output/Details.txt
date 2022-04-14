@@ -1,0 +1,10 @@
+
+Name : Issack G Kasamka
+Reg  : 19100534050043
+Course : Computer Engineering
+Work : Assaignment 2
+
+TextEditor : VisualStudioCode
+DB_Name :  Album
+DB_table_name : Watumizi
+

@@ -102,12 +102,11 @@ public class Login extends JFrame{
                 public void actionPerformed(ActionEvent arg0) {
                     
 
-                    register Registration = new register();
+                  
+                    Register trial = new Register();
+                    trial.comp();
 
-                    Registration.RegistrationForm();
-
-                   // System.out.println("Hi there Register here");
-                    
+                   
                 }
                 
             });
@@ -150,15 +149,18 @@ public class Login extends JFrame{
         
       //  final String DB_DATABASE ="Learning";
 
-      final String DB_URL  = "jdbc:mysql://localhost:3306/Album";
-      final String USERNAME = "root";
-      final  String PASSWORD = "root";
+        final String DB_URL  = "jdbc:mysql://localhost:3306/Album";
+        final String USERNAME = "root";
+        final  String PASSWORD = "root";
         
        
 
         try {
-            Connection conn = DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
+
             //connected to database succseess
+
+            Connection conn = DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
+            
 
             String sql = "SELECT * FROM Watumiaji WHERE email =? AND password=?";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
