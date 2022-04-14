@@ -93,12 +93,19 @@ public class Login extends JFrame{
                 
             });
 
+            JButton btnRegister = new JButton("Register Here");
+            btnRegister.setFont(mainFont);
 
             JPanel buttonPanel = new JPanel();
             buttonPanel.setLayout(new GridLayout(1,2,10,0));
             buttonPanel.setBorder(BorderFactory.createEmptyBorder(30,50,30,50));
             buttonPanel.add(btnLogin);
             buttonPanel.add(btnCancel);
+
+            JPanel regPanel = new JPanel();
+            regPanel.setLayout(new GridLayout(2,2,2,2));
+
+            regPanel.add(btnRegister);
 
 
 
@@ -121,20 +128,22 @@ public class Login extends JFrame{
     }
 
 
-    private User getAuthenticatedUser(String email, String password){
+        private User getAuthenticatedUser(String email, String password){
         User user = null;
         
       //  final String DB_DATABASE ="Learning";
-        final String DB_URL = "mysql";
-        final String USERNAME = "root";
-        final String PASSWORD = "root";
+
+      final String DB_URL  = "jdbc:mysql://localhost:3306/Album";
+      final String USERNAME = "root";
+      final  String PASSWORD = "root";
+        
        
 
         try {
             Connection conn = DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
             //connected to database succseess
 
-            String sql = "SELECT * FROM users WHERE email =? AND password=?";
+            String sql = "SELECT * FROM Watumiaji WHERE email =? AND password=?";
             PreparedStatement preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, password);
